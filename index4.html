@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Pest Shield</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    body {
+      background: #f7fbfd;
+      color: #1a2c3d;
+    }
+
+    header {
+      background: linear-gradient(135deg, #006494, #00a6fb);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.3rem;
+    }
+
+    nav {
+      background: #003554;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #00d1ff;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      color: #006494;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      color: #003554;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 60px 20px;
+      background: #eaf6fb;
+    }
+
+    .cta h2 {
+      color: #007ca6;
+      margin-bottom: 20px;
+    }
+
+    .cta button {
+      background: #007ca6;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .cta button:hover {
+      background: #005b80;
+    }
+
+    footer {
+      background: #002b3e;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header id="home">
+    <h1>Nova Pest Shield</h1>
+    <p>Defense Reimagined. Modern Pest Solutions.</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p style="text-align:center; max-width: 800px; margin: auto;">We’re Nova Pest Shield — a future-facing pest control company built for homes and businesses that value smart, effective, and modern protection. Our blend of technology and sustainability ensures peace of mind 365 days a year.</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>AI Termite Monitoring</h3>
+        <p>Real-time thermal & acoustic detection system powered by machine learning models.</p>
+      </div>
+      <div class="card">
+        <h3>Eco-Fog Sanitization</h3>
+        <p>Certified disinfection using essential oil vapor treatments safe for pets and plants.</p>
+      </div>
+      <div class="card">
+        <h3>Digital Mosquito Barrier</h3>
+        <p>Outdoor automated traps with mobile integration and live mosquito index data.</p>
+      </div>
+      <div class="card">
+        <h3>Industrial Rodent Grid</h3>
+        <p>Smart bait systems and floor sensors ideal for factories and storage units.</p>
+      </div>
+      <div class="card">
+        <h3>Bed Bug Scan & Zap</h3>
+        <p>Instant UV scan and directed heat elimination down to the mattress layer.</p>
+      </div>
+      <div class="card">
+        <h3>Pigeon & Drone Nest Removal</h3>
+        <p>High-rise inspections with aerial drone removal & netting deployment.</p>
+      </div>
+      <div class="card">
+        <h3>Commercial Compliance Audits</h3>
+        <p>Regular pest audits and documentation support for FSSAI, HACCP, ISO audits.</p>
+      </div>
+      <div class="card">
+        <h3>Digital Service Reports</h3>
+        <p>Receive real-time PDFs of service completion, technician check-ins, and after-care steps.</p>
+      </div>
+      <div class="card">
+        <h3>Bio-Control Garden Spray</h3>
+        <p>Use of beneficial insects and microbes for lawns and ornamental plants.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Need Emergency Pest Help?</h2>
+    <p>Fast, tech-driven pest response available across your city. Book your visit now.</p>
+    <button onclick="location.href='#contact'">Book a Free Visit</button>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p style="text-align:center; max-width: 800px; margin: auto;">
+      📧 Email: <a href="mailto:hi@novapests.com">hi@novapests.com</a><br>
+      📞 Phone: +91 98765 43210<br>
+      📍 HQ: Nova Tower, Science City Road, Ahmedabad, India
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Nova Pest Shield. Precision without poison. Tech with a conscience.</p>
+  </footer>
+
+</body>
+</html>
