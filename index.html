@@ -130,6 +130,38 @@
       padding: 40px 20px;
       font-size: 0.9rem;
     }
+
+	  #slider {
+      width: 600px;
+      height: 340px;
+      position: relative;
+      margin: auto;
+      border: 2px solid #ccc;
+      overflow: hidden;
+      background: #000;
+    }
+    #slider img,
+    #slider video {
+      width: 100%;
+      height: 100%;
+      display: none;
+      object-fit: contain;
+    }
+    #slider img.active,
+    #slider video.active {
+      display: block;
+    }
+    #controls {
+      text-align: center;
+      margin-top: 10px;
+    }
+    button {
+      padding: 8px 15px;
+      margin: 0 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+	  
   </style>
 </head>
 <body>
@@ -146,6 +178,56 @@
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
   </nav>
+
+<div id="slider">
+    <img src="https://via.placeholder.com/600x340?text=Image+1" class="active" alt="Image 1" />
+    <video controls>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <img src="https://via.placeholder.com/600x340?text=Image+2" alt="Image 2" />
+    <video controls>
+      <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div id="controls">
+    <button id="prevBtn">Previous</button>
+    <button id="nextBtn">Next</button>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('#slider img, #slider video');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        if (slide.tagName === 'VIDEO') {
+          if (i === index) {
+            slide.play();
+          } else {
+            slide.pause();
+            slide.currentTime = 0;
+          }
+        }
+      });
+    }
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+    });
+
+    // Initial display
+    showSlide(currentIndex);
+  </script>
 
   <section id="about">
     <h2>About Us</h2>
