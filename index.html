@@ -131,35 +131,18 @@
       font-size: 0.9rem;
     }
 
-	  #slider {
-      width: 600px;
-      height: 340px;
-      position: relative;
-      margin: auto;
-      border: 2px solid #ccc;
-      overflow: hidden;
-      background: #000;
-    }
-    #slider img,
-    #slider video {
+ .splide__slide img,
+    .splide__slide video {
       width: 100%;
-      height: 100%;
-      display: none;
+      height: auto;
       object-fit: contain;
     }
-    #slider img.active,
-    #slider video.active {
-      display: block;
+    .splide__slide video {
+      max-height: 400px;
     }
-    #controls {
-      text-align: center;
-      margin-top: 10px;
-    }
-    button {
-      padding: 8px 15px;
-      margin: 0 5px;
-      font-size: 16px;
-      cursor: pointer;
+    .splide {
+      max-width: 640px;
+      margin: 2rem auto;
     }
 	  
   </style>
@@ -179,55 +162,44 @@
     <a href="#contact">Contact</a>
   </nav>
 
-<div id="slider">
-    <img src="https://via.placeholder.com/600x340?text=Image+1" class="active" alt="Image 1" />
-    <video controls>
-      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <img src="https://via.placeholder.com/600x340?text=Image+2" alt="Image 2" />
-    <video controls>
-      <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+<div id="mixed-slider" class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">
+          <img src="photo1.jpg" alt="Photo 1">
+        </li>
+        <li class="splide__slide">
+          <video controls>
+            <source src="sample-video.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        </li>
+        <li class="splide__slide">
+          <img src="photo2.jpg" alt="Photo 2">
+        </li>
+        <li class="splide__slide">
+          <video controls>
+            <source src="sample-video2.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        </li>
+      </ul>
+    </div>
   </div>
 
-  <div id="controls">
-    <button id="prevBtn">Previous</button>
-    <button id="nextBtn">Next</button>
-  </div>
-
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
   <script>
-    const slides = document.querySelectorAll('#slider img, #slider video');
-    let currentIndex = 0;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-        if (slide.tagName === 'VIDEO') {
-          if (i === index) {
-            slide.play();
-          } else {
-            slide.pause();
-            slide.currentTime = 0;
-          }
-        }
-      });
-    }
-
-    document.getElementById('nextBtn').addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
+    document.addEventListener( 'DOMContentLoaded', function () {
+      new Splide('#mixed-slider', {
+        type    : 'loop',
+        perPage : 1,
+        autoplay: true,
+        pauseOnHover: true,
+        rewind  : true,
+      }).mount();
     });
-
-    document.getElementById('prevBtn').addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      showSlide(currentIndex);
-    });
-
-    // Initial display
-    showSlide(currentIndex);
   </script>
+
 
   <section id="about">
     <h2>About Us</h2>
