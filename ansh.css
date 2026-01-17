@@ -873,3 +873,123 @@ section::-webkit-scrollbar {
     z-index: 999;
   }
 }
+
+/* Base layout */
+.contact-section {
+  padding: 60px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.contact-wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Left form */
+.contact-form {
+  flex: 1;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+/* Button */
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Disabled state */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Right info */
+.contact-info {
+  flex: 1;
+}
+
+.info-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.info-item i {
+  font-size: 20px;
+  margin-top: 4px;
+}
+
+/* Map */
+.map-box iframe {
+  width: 100%;
+  height: 230px;
+  border-radius: 15px;
+}
+
+/* ========================= */
+/* 📱 Tablet (max 992px) */
+/* ========================= */
+@media (max-width: 992px) {
+  .contact-wrapper {
+    gap: 30px;
+  }
+}
+
+/* ========================= */
+/* 📱 Mobile (max 768px) */
+/* ========================= */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+
+  .contact-form,
+  .contact-info {
+    width: 100%;
+  }
+
+  .map-box iframe {
+    height: 220px;
+  }
+}
+
+/* ========================= */
+/* 📱 Small Mobile (max 480px) */
+/* ========================= */
+@media (max-width: 480px) {
+  .section-title h2 {
+    font-size: 22px;
+  }
+
+  .btn-primary {
+    font-size: 15px;
+  }
+}
+
