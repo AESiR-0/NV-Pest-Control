@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -335,18 +335,21 @@
               action="https://api.web3forms.com/submit"
               method="POST"
             >
-              <!-- Web3Forms -->
+              <!-- Web3Forms Access Key -->
               <input
                 type="hidden"
                 name="access_key"
-                value="eb091411-df8d-47d9-917f-d0dcdf5e33f7"
+                value="c5b6b32b-2ae0-4629-bbb5-24a87490dd69"
               />
+
+              <!-- Email Subject -->
               <input
                 type="hidden"
                 name="subject"
                 value="New Trial Booking - NV Pest Control"
               />
 
+              <!-- Name -->
               <div class="form-group">
                 <input
                   type="text"
@@ -356,6 +359,7 @@
                 />
               </div>
 
+              <!-- Email -->
               <div class="form-group">
                 <input
                   type="email"
@@ -365,6 +369,7 @@
                 />
               </div>
 
+              <!-- Service -->
               <div class="form-group">
                 <select name="service" required>
                   <option value="" disabled selected>Select Service</option>
@@ -381,26 +386,24 @@
                 </select>
               </div>
 
+              <!-- Address / Message -->
               <div class="form-group">
                 <textarea
                   name="message"
-                  placeholder="Enter Your address......"
+                  placeholder="Enter Your Address..."
                   rows="5"
                   required
                 ></textarea>
               </div>
 
-              <!-- <button type="submit" class="btn-primary">Book Free Trial</button> -->
-              <button type="submit" class="btn-primary" id="submitBtn">
-                Book Free Trial
-              </button>
+              <!-- Submit -->
+              <button type="submit" class="btn-primary">Book Free Trial</button>
             </form>
           </div>
 
-          <!-- RIGHT SIDE INFO (UNCHANGED) -->
           <div class="contact-info">
             <div class="info-item">
-              <i class="fas fa-map-marker-alt" style="height: 47px;"></i>
+              <i class="fas fa-map-marker-alt" style="height: 47px"></i>
               <div>
                 <h4>HQ Address</h4>
                 <p>
@@ -488,7 +491,6 @@
       const navLinks = document.querySelectorAll(".nav-links li a");
       const body = document.body;
 
-      // Toggle Menu and Icon Animation
       hamburger.addEventListener("click", (e) => {
         e.stopPropagation();
         hamburger.classList.toggle("active");
@@ -496,7 +498,6 @@
         body.classList.toggle("menu-open");
       });
 
-      // Close menu when a link is clicked
       navLinks.forEach((link) => {
         link.addEventListener("click", () => {
           hamburger.classList.remove("active");
@@ -530,7 +531,7 @@
 
         if (response.ok) {
           Toastify({
-            text: "✅ Trial booked successfully! We’ll contact you soon.",
+            text: " Trial booked successfully! We’ll contact you soon.",
             duration: 3000,
             gravity: "top",
             position: "right",
@@ -544,7 +545,7 @@
           }, 3000);
         } else {
           Toastify({
-            text: "❌ Something went wrong. Please try again.",
+            text: "Something went wrong. Please try again.",
             duration: 3000,
             gravity: "top",
             position: "right",
@@ -572,7 +573,7 @@
 
           if (response.ok) {
             Toastify({
-              text: "✅ Trial booked successfully! We’ll contact you soon.",
+              text: "Trial booked successfully! We’ll contact you soon.",
               duration: 3000,
               gravity: "top",
               position: "right",
@@ -589,7 +590,7 @@
           }
         } catch (error) {
           Toastify({
-            text: "❌ Something went wrong. Please try again.",
+            text: " Something went wrong. Please try again.",
             duration: 3000,
             gravity: "top",
             position: "right",
